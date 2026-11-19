@@ -1,5 +1,13 @@
 # Changes
 
+## 0.1.0.9003
+
+- Added a platform-aware BLAS setup guide and linked it from the README and HPC
+  documentation.
+- Added an optional Python utility for inspecting an OpenBLAS shared library.
+- Excluded GitHub citation metadata from the R package source build.
+- Analysis functions are unchanged from 0.1.0.9002.
+
 ## 0.1.0.9002
 
 - Removed extra empty arguments from help usage and function-reference signatures.

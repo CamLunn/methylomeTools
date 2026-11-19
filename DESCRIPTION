@@ -1,7 +1,7 @@
 Package: methylomeTools
 Type: Package
 Title: Methylation Analysis, Parallel Modeling and Genomic Visualization
-Version: 0.1.0.9002
+Version: 0.1.0.9003
 Author: Cam Lunn
 Maintainer: Cam Lunn <cameron.lunn@nyulangone.org>
 Description: Utilities for methylation matrix preparation, surrogate variable

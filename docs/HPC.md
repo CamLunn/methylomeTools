@@ -1,5 +1,8 @@
 # HPC, OnDemand and SLURM
 
+See [BLAS libraries and threading](BLAS.md) for R library identification,
+module discovery, external OpenBLAS inspection, and process-local startup settings.
+
 OnDemand provides the session; the allocated CPUs and memory constrain the job.
 Install the package in an R library available to both the interactive session and
 compute nodes. No cluster path, R module, BLAS shared library or node exclusion is

@@ -5,5 +5,5 @@ bibentry(
   title = "methylomeTools: Methylation Analysis, Parallel Modeling and Genomic Visualization",
   author = person("Cam", "Lunn"),
   year = "2026",
-  note = "R package version 0.1.0.9002 (development version)"
+  note = "R package version 0.1.0.9003 (development version)"
 )

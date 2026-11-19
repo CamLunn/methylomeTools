@@ -89,6 +89,9 @@ older beta-input caches are rejected. Already transformed inputs supplied as
 
 ### Parallelism
 
+The [BLAS setup guide](docs/BLAS.md) covers library discovery, thread settings,
+external OpenBLAS configuration, and verification on other systems.
+
 SVA runs in one R process. `workers` is retained for compatibility and does not
 start preprocessing workers; values above one now warn. `blas_threads` requests
 threads for matrix operations when R uses a suitable BLAS library. It does not
@@ -114,6 +117,7 @@ copy count matrices.
 
 - [Analysis workflow](docs/WORKFLOW.md)
 - [HPC and SLURM setup](docs/HPC.md)
+- [BLAS libraries and threading](docs/BLAS.md)
 - [Function signatures](docs/FUNCTION_REFERENCE.md)
 - [Changes](docs/CHANGES.md)
 
