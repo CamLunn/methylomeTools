@@ -1,0 +1,74 @@
+\name{build_methyl_svs}
+\alias{build_methyl_svs}
+\title{Prepare methylation features and estimate surrogate variables using sva.}
+\description{Prepare methylation features and estimate surrogate variables using sva.}
+\usage{
+build_methyl_svs(meth_mat,
+    mod,
+    mod0,
+    value_type = c("M", "beta"),
+    user_cpg_set = NULL,
+    feature_strategy = c("user_set_plus_hvf", "hvf_only", "user_set_only"),
+    n_hvf = NULL,
+    override_hvf = FALSE,
+    hvf_stat = c("mad", "var"),
+    missingness_max = 0.05,
+    impute = FALSE,
+    impute_method = c("knn_chr"),
+    knn_k = 10,
+    num_sv_method = c("be", "leek", "manual"),
+    num_sv_manual = NULL,
+    sva_method = c("irw", "two_step"),
+    center_features = TRUE,
+    scale_features = FALSE,
+    use_delayed = TRUE,
+    workers = NULL,
+    blas_threads = NULL,
+    seed = 1,
+    log_file = NULL,
+    verbose = TRUE,
+    diagnostics = NULL,
+    diagnostics_dir = NULL,
+    return_selected_matrix = FALSE,
+    return_feature_table = TRUE,
+    return_logs = TRUE,
+    write_rds = FALSE,
+    rds_file = NULL,
+    cache_prep_rds = NULL)
+}
+\arguments{
+  \item{meth_mat}{Methylation matrix in SVA functions; methylated read counts in coverage utilities. See module guide.}
+  \item{mod}{Full design matrix, with rows in methylation sample order.}
+  \item{mod0}{Nested null design matrix, with rows in the same sample order.}
+  \item{value_type}{Input scale. Selected beta values are converted to log2 M values with endpoint clipping at 1e-6; M values are used directly. Feature selection uses the supplied scale.}
+  \item{user_cpg_set}{Configuration argument; see the default in the usage and the module guide.}
+  \item{feature_strategy}{Configuration argument; see the default in the usage and the module guide.}
+  \item{n_hvf}{Number of highly variable features to select. Ranking uses the supplied input scale.}
+  \item{override_hvf}{Configuration argument; see the default in the usage and the module guide.}
+  \item{hvf_stat}{Configuration argument; see the default in the usage and the module guide.}
+  \item{missingness_max}{Maximum missing fraction for feature eligibility. With impute=FALSE, selected incomplete features are subsequently removed.}
+  \item{impute}{Leave FALSE: chromosome-wise KNN imputation is not implemented.}
+  \item{impute_method}{Configuration argument; see the default in the usage and the module guide.}
+  \item{knn_k}{Configuration argument; see the default in the usage and the module guide.}
+  \item{num_sv_method}{Estimate the SV count using be or leek, or supply a manual count.}
+  \item{num_sv_manual}{Nonnegative integer SV count when num_sv_method is manual. Must leave residual degrees of freedom.}
+  \item{sva_method}{Use irw for sva::sva on methylation M values. The legacy two_step option is rejected because it previously called svaseq.}
+  \item{center_features}{Configuration argument; see the default in the usage and the module guide.}
+  \item{scale_features}{Configuration argument; see the default in the usage and the module guide.}
+  \item{use_delayed}{Configuration argument; see the default in the usage and the module guide.}
+  \item{workers}{Compatibility argument. Preprocessing uses one R process; requests above one warn. Use blas_threads for BLAS threading.}
+  \item{blas_threads}{Requested positive integer BLAS thread count. Actual threading depends on the BLAS library; this changes session thread settings. For SLURM, cannot exceed allocated CPUs.}
+  \item{seed}{Random seed for reproducible feature diagnostics and SVA estimation.}
+  \item{log_file}{Configuration argument; see the default in the usage and the module guide.}
+  \item{verbose}{Configuration argument; see the default in the usage and the module guide.}
+  \item{diagnostics}{Configuration argument; see the default in the usage and the module guide.}
+  \item{diagnostics_dir}{Configuration argument; see the default in the usage and the module guide.}
+  \item{return_selected_matrix}{Return the final centered/scaled M-value matrix used for fitting.}
+  \item{return_feature_table}{Configuration argument; see the default in the usage and the module guide.}
+  \item{return_logs}{Configuration argument; see the default in the usage and the module guide.}
+  \item{write_rds}{Configuration argument; see the default in the usage and the module guide.}
+  \item{rds_file}{Configuration argument; see the default in the usage and the module guide.}
+  \item{cache_prep_rds}{Optional path to save model-independent feature preparation for reuse on the same samples.}
+}
+\value{A preparation object, surrogate-variable result list, or SLURM job paths, depending on the function.}
+\details{See the README and docs directory for input formats and optional dependencies.}

@@ -1,0 +1,23 @@
+Package: methylomeTools
+Type: Package
+Title: Methylation Analysis, Parallel Modeling and Genomic Visualization
+Version: 0.1.0.9002
+Author: Cam Lunn
+Maintainer: Cam Lunn <cameron.lunn@nyulangone.org>
+Description: Utilities for methylation matrix preparation, surrogate variable
+    analysis, parallel DSS modeling, comb-p region calling and CpG and region
+    visualization. Includes optional human hg38 annotation and read-only CpG
+    metadata database access. Development version.
+License: MIT + file LICENSE
+Encoding: UTF-8
+Depends: R (>= 4.1.0)
+Imports: grid, parallel, dplyr, rlang, stats, utils, graphics, grDevices, methods,
+    GenomicRanges, GenomeInfoDb, IRanges, S4Vectors, BiocGenerics,
+    SummarizedExperiment, bsseq, sva, ggplot2 (>= 3.4.0), scales,
+    tibble, tidyr
+Suggests: ENmix, annotatr, AnnotationDbi, GenomicFeatures,
+    TxDb.Hsapiens.UCSC.hg38.knownGene, org.Hs.eg.db,
+    DBI, RSQLite, matrixStats, DelayedArray, DelayedMatrixStats,
+    RhpcBLASctl, irlba, Cairo, parallelly, DSS, ggrepel,
+    patchwork, mgcv, testthat (>= 3.0.0), BiocManager
+Config/testthat/edition: 3

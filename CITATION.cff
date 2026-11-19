@@ -1,0 +1,13 @@
+cff-version: 1.2.0
+message: >-
+  If you use methylomeTools in research, please cite the software and the
+  underlying methods used in your analysis. An associated paper will be
+  added as the preferred citation when its bibliographic details are available.
+type: software
+title: "methylomeTools: Methylation Analysis, Parallel Modeling and Genomic Visualization"
+version: 0.1.0.9002
+authors:
+  - family-names: Lunn
+    given-names: Cam
+    email: cameron.lunn@nyulangone.org
+license: MIT
